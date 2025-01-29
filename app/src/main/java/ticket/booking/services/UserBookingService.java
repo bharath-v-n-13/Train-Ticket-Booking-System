@@ -2,6 +2,7 @@ package ticket.booking.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import ticket.booking.entities.Ticket;
 import ticket.booking.entities.Train;
 import ticket.booking.entities.User;
@@ -15,22 +16,26 @@ import java.util.Optional;
 public class UserBookingService {
     private User user;
 
-    private final List<User> userList;
+    private List<User> userList;
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper;
 
-    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localDb/users.json";
+    private final String USERS_PATH = "app/src/main/java/ticket/booking/localDb/users.json";
 
     public UserBookingService(User user) throws IOException {
+        objectMapper = new ObjectMapper();
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         this.user = user;
-        userList = loadUsers();
+        loadUsers();
     }
     public UserBookingService() throws IOException{
-        userList = loadUsers();
+        objectMapper = new ObjectMapper();
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        loadUsers();
     }
-    public List<User> loadUsers() throws IOException{
+    private void loadUsers() throws IOException{
         File users = new File(USERS_PATH);
-        return objectMapper.readValue(users, new TypeReference<List<User>>() {});
+        userList = objectMapper.readValue(users, new TypeReference<List<User>>() {});
     }
 
     public Boolean loginUser(){
@@ -40,13 +45,12 @@ public class UserBookingService {
         return foundUser.isPresent();
     }
 
-    public Boolean signUp(User user1){
+    public void signUp(User user1){
         try{
             userList.add(user1);
             saveUserListToFile();
-            return Boolean.TRUE;
         }catch (Exception ex){
-            return Boolean.FALSE;
+            System.out.println("saving userlist to file failed " + ex.getMessage());
         }
 
     }

@@ -1,29 +1,56 @@
-[
-  {
-    "user_id": "abcdef",
-    "name": "Sameer Sayyed",
-    "hashed_password": "12345",
-    "tickets_booked": [
-      {
-        "source": "Bangalore",
-        "destination": "Delhi",
-        "date_of_travel": "2024-01-08T18:30:00Z",
-        "train": {
-          "train_id": "bacs",
-          "train_no": 12345,
-          "seats": [
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0]
-          ],
-          "stations": {
-            "Bangalore": "13:50:00",
-            "Jaipur": "13:50:00",
-            "Delhi": "13:50:00"
-          }
-        }
-      }
-    ]
-  }
-]
+[ {
+  "name" : "Sameer",
+  "user_id" : "abcde",
+  "password" : "12345",
+  "hashed_password" : "$2a$10$MqonEcizso4Re9iFEMajHOIHCUd5O3Q.XZX779C50ZnC/Hb6mirwW",
+  "tickets_booked" : [ {
+    "ticket_id" : "your_ticket_id",
+    "user_id" : "abcde",
+    "source" : "Bangalore",
+    "destination" : "Delhi",
+    "date_of_travel" : "2023-12-08T18:30:00Z",
+    "train" : {
+      "train_id" : "bacs",
+      "train_no" : "12345",
+      "seats" : [ [ 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0 ] ],
+      "station_times" : {
+        "Bangalore" : "13:50:00",
+        "Jaipur" : "13:50:00",
+        "Delhi" : "13:50:00"
+      },
+      "stations" : [ "Bangalore", "Jaipur", "Delhi" ],
+      "train_info" : "Train ID: bacs Train No: 12345"
+    },
+    "ticket_info" : "Ticket ID: your_ticket_id belongs to User abcdefgh from Bangalore to Delhi on 2023-12-08T18:30:00Z"
+  } ]
+}, {
+  "name" : "rahul",
+  "user_id" : "fe46da4d-c8d1-4229-97e6-600dce6941e8",
+  "password" : "hhbb11",
+  "hashed_password" : "$2a$10$O/OWE.xh3gttMANiM4BIX.mo.4/myik1J739DZ25ecVENk8xhMCW2",
+  "tickets_booked" : [ ]
+}, {
+  "name" : "Sameer",
+  "user_id" : "b39c8b19-20a2-4505-a53e-65408e6e8caa",
+  "password" : "1234",
+  "hashed_password" : "$2a$10$NBh9SopEaRfGu4qtFM3yK.oEjoBw69Wysg3frA76sbL4K.0t8s3Vy",
+  "tickets_booked" : [ ]
+}, {
+  "name" : "sameer",
+  "user_id" : "25d2ee6b-fca7-4a46-bd31-62e3a7bc7dfb",
+  "password" : "sayyed",
+  "hashed_password" : "$2a$10$Kgml1rheyZE69wsEVWT9yeQrGE08QaMKb0Q5xwM.kMteL6qXiSHgK",
+  "tickets_booked" : [ ]
+}, {
+  "name" : "hello",
+  "user_id" : "b95f811a-6312-4d79-be31-5428b8a53def",
+  "password" : "bro",
+  "hashed_password" : "$2a$10$uzbmfk9H.ghcBaEKL8AdN.binPIpVC.0adWZGa.h.5mzFSOeiuPWK",
+  "tickets_booked" : [ ]
+}, {
+  "name" : "bug",
+  "user_id" : "f3ccde78-e7c7-481c-9b5b-b4bacf772d5d",
+  "password" : "fixed",
+  "hashed_password" : "$2a$10$EqL0uYQDqvTeINEJWp.fdOubTN/T9RDOBj1/zgAEUH1xLwyA4ppKS",
+  "tickets_booked" : [ ]
+} ]

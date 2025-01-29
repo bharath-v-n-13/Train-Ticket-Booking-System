@@ -9,26 +9,26 @@ import ticket.booking.entities.User;
 import ticket.booking.services.UserBookingService;
 import ticket.booking.utils.UserServiceUtil;
 
-import javax.sound.midi.Soundbank;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+
         System.out.println("Welcome to my Ticket Booking System!");
         Scanner scanner = new Scanner(System.in);
         int option = 0;
         UserBookingService userBookingService;
+
         try{
             userBookingService = new UserBookingService();
         }
         catch (IOException ex){
-            System.out.println("There is something wrong!");
+            System.out.println("There is something wrong!" + ex.getMessage());
             return;
         }
+
         while(option!=7){
             System.out.println("Choose option");
             System.out.println("1. Sign up");
@@ -39,20 +39,16 @@ public class App {
             System.out.println("6. Cancel my Booking");
             System.out.println("7. Exit the App");
             option = scanner.nextInt();
+            scanner.nextLine();
             switch (option){
                 case 1:
                     System.out.println("Enter your username to signup: ");
                     String signUpName = scanner.next();
                     System.out.println("Enter your password: ");
                     String signUpPass = scanner.next();
-                    User signUpUser = new User(signUpName, signUpPass,
-                            UserServiceUtil.hashPassword(signUpPass),
-                            new ArrayList<>(), UUID.randomUUID().toString());
-                    if (userBookingService.signUp(signUpUser)){
-                        System.out.println("Sign up successful!");
-                    }else {
-                        System.out.println("Sign up failed!");
-                    }
+                    User userToSignup = new User(signUpName, signUpPass, UserServiceUtil.hashPassword(signUpPass), new ArrayList<>(), UUID.randomUUID().toString());
+                    userBookingService.signUp(userToSignup);
+                    System.out.println("Sign up successful!");
                     break;
                 case 2:
                     System.out.println("Enter the username to login: ");
@@ -88,7 +84,7 @@ public class App {
                     String source = scanner.nextLine();
                     System.out.println("Enter your destination destination: ");
                     String destination = scanner.nextLine();
-                    List<Train> trains = userBookingService.getTrains(source,destination);
+//                    List<Train> trains = userBookingService.getTrains(source,destination);
                     break;
             }
         }
