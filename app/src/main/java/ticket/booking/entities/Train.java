@@ -22,6 +22,8 @@ public class Train {
 
     private List<String> stations;
 
+
+
     public Train(){}
 
     public Train(String trainId, String trainNo, List<List<Integer>> seats,

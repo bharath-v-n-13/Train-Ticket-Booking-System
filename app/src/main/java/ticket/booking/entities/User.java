@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
+import java.util.Collections;
 import java.util.List;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class User {
 
-    private String name;
+    private String username;
     private String userId;
     private String password;
     private String hashedPassword;
@@ -20,17 +21,17 @@ public class User {
     // Constructor
     public User(){}
 
-    public User(String name, String password, String hashedPassword, List<Ticket> ticketsBooked, String userId){
-        this.name = name;
+    public User(String username, String password, String hashedPassword, List<Ticket> ticketsBooked, String userId){
+        this.username = username;
         this.userId = userId;
         this.password = password;
         this.hashedPassword = hashedPassword;
-        this.ticketsBooked = ticketsBooked;
+        this.ticketsBooked = ticketsBooked != null ? ticketsBooked : Collections.emptyList(); // Safe handling for null lists
     }
 
     // Getter's
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
@@ -46,8 +47,8 @@ public class User {
     }
 
     public void printTickets(){
-        for( int i = 0; i < ticketsBooked.size();i++){
-            System.out.println(ticketsBooked.get(i).getTicketInfo());
+        for (Ticket ticket : ticketsBooked) {
+            System.out.println(ticket.getTicketInfo());
         }
     }
 
@@ -57,8 +58,8 @@ public class User {
 
 
     // Setter's
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setUserId(String userId) {

@@ -14,7 +14,7 @@ import java.util.*;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         System.out.println("Welcome to my Ticket Booking System!");
         Scanner scanner = new Scanner(System.in);
@@ -42,28 +42,55 @@ public class App {
             scanner.nextLine();
             switch (option){
                 case 1:
-                    System.out.println("Enter your username to signup: ");
-                    String signUpName = scanner.next();
+                    String signUpName;
+                    while(true){
+                        System.out.println("Enter your username to signup: ");
+                        signUpName = scanner.nextLine();
+                        if(signUpName.contains(" ")){
+                            System.out.println("Username cannot contain spaces!");
+                        }
+                        else{
+                            break;
+                        }
+                    }
                     System.out.println("Enter your password: ");
-                    String signUpPass = scanner.next();
+                    String signUpPass = scanner.nextLine();
                     User userToSignup = new User(signUpName, signUpPass, UserServiceUtil.hashPassword(signUpPass), new ArrayList<>(), UUID.randomUUID().toString());
-                    userBookingService.signUp(userToSignup);
-                    System.out.println("Sign up successful!");
+                    try{
+                        boolean userDuplicate = userBookingService.signUp(userToSignup);
+                        if(userDuplicate){
+                            System.out.println("Sign up successful!");
+                        }
+                        else{
+                            break;
+                        }
+                    }catch (IOException ex){
+                        System.out.println("Can SignUp User!");
+                    }
                     break;
                 case 2:
                     System.out.println("Enter the username to login: ");
-                    String username = scanner.next();
+                    String username;
+                    while(true){
+                        username = scanner.nextLine();
+                        if(username.contains(" ")){
+                            System.out.println("Username cannot contain spaces!");
+                        }
+                        else{
+                            break;
+                        }
+                    }
                     System.out.println("Enter your password: ");
-                    String password = scanner.next();
+                    String password = scanner.nextLine();
 
                     User signInUser = new User(username,password,UserServiceUtil.hashPassword(password),
                             new ArrayList<>(),UUID.randomUUID().toString());
 
                     try{
-                        UserBookingService tempUser = new UserBookingService(signInUser);
-                        if(userBookingService.loginUser()){
-                            System.out.println("Login successful!");
-                            userBookingService = tempUser;
+                        UserBookingService userBookingTempUser = new UserBookingService(signInUser);
+                        if(userBookingTempUser.loginUser()){
+                            System.out.println("Login successful! Welcome " + username);
+                            userBookingService = userBookingTempUser;
                         }
                         else{
                             System.out.println("Login failed!");
@@ -75,6 +102,7 @@ public class App {
                 case 3:
                     try{
                         userBookingService.fetchBookings();
+                        System.out.println("Bookings fetched successfully!");
                     }catch (Exception ex){
                         System.out.println("There is something wrong!");
                     }
