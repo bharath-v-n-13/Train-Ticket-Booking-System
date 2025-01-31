@@ -1,22 +1,66 @@
 ---
 
-# **Ticket Booking System 🎟️🚆**  
+# 🎟️ **Ticket Booking System (CLI-Based)**  
 
-This project is a **Java-based ticket booking system** that demonstrates my foundational knowledge of **Java** and **Object-Oriented Programming (OOP)** principles. It includes core functionalities such as **user authentication, train search, ticket booking, and cancellation**, all managed through a structured and efficient codebase.  
+This project is my first **Java-based Ticket Booking System**, designed to strengthen my **Object-Oriented Programming (OOP)** skills while implementing practical functionalities like **user authentication, train search, ticket booking, and cancellation**.  
 
-The project was initially inspired by [this repository](https://github.com/AlphaDecodeX/TicketBookingSystem), but I have made significant improvements and enhancements to refine its functionality and structure.  
+The project was initially inspired by [this repository](https://github.com/AlphaDecodeX/TicketBookingSystem), but I have made **significant enhancements and refinements** to improve its structure and functionality.  
 
-## 🔹 Key Concepts Implemented  
-- **Object-Oriented Programming (OOP)** – Encapsulation, Inheritance, Polymorphism, and Abstraction  
-- **File Handling** – JSON-based local database for user and ticket storage  
-- **Authentication & Security** – Secure password hashing and validation  
-- **Service-Oriented Architecture (SOA)** – Clear separation of concerns (User Service, Booking Service, etc.)  
-- **Data Serialization** – Using **Jackson** for JSON parsing and serialization  
-- **Exception Handling** – Graceful error handling for robust execution  
+## 🚀 **Features**  
 
-## 🚀 Future Enhancements  
-- **Spring Boot Integration** for improved backend structure and RESTful API support  
-- **Frontend UI** using **React** for a modern user experience  
-- **Database Integration** with MySQL/PostgreSQL for scalable data management  
+✔️ **User Authentication** – Secure sign-up and login system  
+✔️ **Train Search** – Find trains between selected stations  
+✔️ **Seat Availability** – View available seats before booking  
+✔️ **Booking Management** – Reserve and cancel train seats  
+✔️ **Data Persistence** – Store user and booking information  
 
-This project showcases my skills in **Java development, software design principles, and real-world application structuring**. 🚆💻
+## 🛠️ **Technologies Used**  
+
+🔹 **Java** – Core logic and implementation  
+🔹 **Gradle** – Build automation and dependency management  
+🔹 **Collections & Streams API** – Efficient data handling  
+🔹 **OOP Principles** – Encapsulation, Abstraction, and Polymorphism  
+
+## 📦 **Setup & Run**  
+
+### 1️⃣ Clone the Repository  
+```sh
+git clone https://github.com/Sameer07x19/TicketBookingSystem.git
+cd TicketBookingSystem
+```
+
+### 2️⃣ Build the Project  
+```sh
+./gradlew build
+```
+
+### 3️⃣ Run the Application  
+```sh
+./gradlew run
+```
+
+## 📌 **How to Use**  
+
+1️⃣ **Sign Up** – Register a new account  
+2️⃣ **Login** – Access your account securely  
+3️⃣ **Search Trains** – Enter source and destination  
+4️⃣ **View Seats** – Check seat availability before booking  
+5️⃣ **Book a Seat** – Select and confirm your seat  
+6️⃣ **Cancel Booking** – Remove an existing reservation  
+7️⃣ **Exit** – Close the application  
+
+## 🏗️ **Future Enhancements**  
+
+🚀 **Graphical User Interface (GUI)** – Improve user experience  
+💾 **Database Integration** – Store user and train data persistently  
+🔧 **Admin Panel** – Manage train schedules and user bookings  
+
+---
+
+## 👤 **Contributor**  
+
+[![GitHub](https://img.shields.io/badge/GitHub-Sameer07x19-blue?logo=github)](https://github.com/Sameer07x19)  
+
+📜 **License:** MIT  
+
+---
