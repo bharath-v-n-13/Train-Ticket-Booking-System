@@ -4,8 +4,6 @@
 
 This project is my first **Java-based Ticket Booking System**, designed to strengthen my **Object-Oriented Programming (OOP)** skills while implementing practical functionalities like **user authentication, train search, ticket booking, and cancellation**.  
 
-The project was initially inspired by [this repository](https://github.com/AlphaDecodeX/TicketBookingSystem), but I have made **significant enhancements and refinements** to improve its structure and functionality.  
-
 ## 🚀 **Features**  
 
 ✔️ **User Authentication** – Secure sign-up and login system  
