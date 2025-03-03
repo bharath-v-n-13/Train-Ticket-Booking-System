@@ -148,6 +148,7 @@ public class App {
                     System.out.println("Enter the ticket id to cancel the booking");
                     String ticketId = scanner.nextLine();
                     boolean isCancelled = userBookingService.cancelBooking(ticketId);
+
                     if(isCancelled){
                         System.out.println("Booking cancelled successfully!");
                     }
