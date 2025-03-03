@@ -5,7 +5,6 @@ package org.example;
 
 import ticket.booking.entities.Train;
 import ticket.booking.entities.User;
-import ticket.booking.services.TrainService;
 import ticket.booking.services.UserBookingService;
 import ticket.booking.utils.UserServiceUtil;
 
@@ -143,6 +142,17 @@ public class App {
                         System.out.println("Booked! Enjoy your journey");
                     }else{
                         System.out.println("Can't book this seat");
+                    }
+                    break;
+                case 6:
+                    System.out.println("Enter the ticket id to cancel the booking");
+                    String ticketId = scanner.nextLine();
+                    boolean isCancelled = userBookingService.cancelBooking(ticketId);
+                    if(isCancelled){
+                        System.out.println("Booking cancelled successfully!");
+                    }
+                    else{
+                        System.out.println("Booking not found!");
                     }
                     break;
             }

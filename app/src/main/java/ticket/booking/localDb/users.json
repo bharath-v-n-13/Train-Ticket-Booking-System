@@ -38,6 +38,25 @@
       },
       "stations" : [ "Bangalore", "Jaipur", "Delhi" ],
       "train_info" : "Train ID: bacs Train No: 12345"
-    }
+    },
+    "ticket_info" : "Ticket ID: your_ticket_id belongs to User abcde from Bangalore to Delhi on 2023-12-08T18:30:00Z"
   } ]
-}]
+}, {
+  "username" : "abc",
+  "user_id" : "bb6b42e3-4786-4af4-847c-1920eb2dab5e",
+  "password" : "123",
+  "hashed_password" : "$2a$10$gRY1Js3IJ8iHr3UG5pWC7uotysAwCZ0aLxtSQW6goX314ZjtNt6a6",
+  "tickets_booked" : [ ]
+}, {
+  "username" : "sam",
+  "user_id" : "78736ef5-8720-46f8-a259-397891f5cf5f",
+  "password" : "123",
+  "hashed_password" : "$2a$10$P9AuaNwen05DWSjYqoBYTepvYPJDRiYqecGCszBuq.dD8CspWV5/W",
+  "tickets_booked" : [ ]
+}, {
+  "username" : "Sameer",
+  "user_id" : "62442692-80ea-4057-8527-ba656150a4f7",
+  "password" : "1234",
+  "hashed_password" : "$2a$10$ooh0wTQDNneWuWzP/fwzWuXcBibSUhMrRaTpqXK9Xv2q9Bag0GBfK",
+  "tickets_booked" : [ ]
+} ]
