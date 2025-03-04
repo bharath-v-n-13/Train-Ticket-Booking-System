@@ -17,46 +17,9 @@
   "hashed_password" : "$2a$10$Vj1E9zbWmSU.zAl24uujJ.rStp90FCEhhYLCWPFUezDVKwCHpFvRG",
   "tickets_booked" : [ ]
 }, {
-  "username" : "sameer07",
-  "user_id" : "1c8487fb-d783-4523-99f1-685eebf417ec",
-  "password" : "12345",
-  "hashed_password" : "$2a$10$1y6/Z0B94U/zBeJ.oY1o4Om46oZMt9ZVrIF9UKjwmAn0ghr6pn0WG",
-  "tickets_booked" : [ {
-    "ticket_id" : "your_ticket_id",
-    "user_id" : "abcde",
-    "source" : "Bangalore",
-    "destination" : "Delhi",
-    "date_of_travel" : "2023-12-08T18:30:00Z",
-    "train" : {
-      "train_id" : "bacs",
-      "train_no" : "12345",
-      "seats" : [ [ 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0 ] ],
-      "station_times" : {
-        "Bangalore" : "13:50:00",
-        "Jaipur" : "13:50:00",
-        "Delhi" : "13:50:00"
-      },
-      "stations" : [ "Bangalore", "Jaipur", "Delhi" ],
-      "train_info" : "Train ID: bacs Train No: 12345"
-    },
-    "ticket_info" : "Ticket ID: your_ticket_id belongs to User abcde from Bangalore to Delhi on 2023-12-08T18:30:00Z"
-  } ]
-}, {
-  "username" : "abc",
-  "user_id" : "bb6b42e3-4786-4af4-847c-1920eb2dab5e",
-  "password" : "123",
-  "hashed_password" : "$2a$10$gRY1Js3IJ8iHr3UG5pWC7uotysAwCZ0aLxtSQW6goX314ZjtNt6a6",
-  "tickets_booked" : [ ]
-}, {
-  "username" : "sam",
-  "user_id" : "78736ef5-8720-46f8-a259-397891f5cf5f",
-  "password" : "123",
-  "hashed_password" : "$2a$10$P9AuaNwen05DWSjYqoBYTepvYPJDRiYqecGCszBuq.dD8CspWV5/W",
-  "tickets_booked" : [ ]
-}, {
-  "username" : "Sameer",
-  "user_id" : "62442692-80ea-4057-8527-ba656150a4f7",
-  "password" : "1234",
-  "hashed_password" : "$2a$10$ooh0wTQDNneWuWzP/fwzWuXcBibSUhMrRaTpqXK9Xv2q9Bag0GBfK",
+  "username" : "a",
+  "user_id" : "2177f39a-3e91-4bd5-b9db-1d5836859e3c",
+  "password" : "b",
+  "hashed_password" : "$2a$10$a1GCjTc1YhWpxQ3RPjJLrOAGXs0GlQX.lSONodi7JPFK8BCO0pGxa",
   "tickets_booked" : [ ]
 } ]

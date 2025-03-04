@@ -47,8 +47,14 @@ public class User {
     }
 
     public void printTickets(){
-        for (Ticket ticket : ticketsBooked) {
-            System.out.println(ticket.getTicketInfo());
+//        System.out.println("Debugged User.java -> printTickets()");
+        if(ticketsBooked.isEmpty()){
+            System.out.println("No tickets booked yet!");
+            return;
+        }else {
+            for (Ticket ticket : ticketsBooked) {
+                System.out.println(ticket.getTicketInfo());
+            }
         }
     }
 

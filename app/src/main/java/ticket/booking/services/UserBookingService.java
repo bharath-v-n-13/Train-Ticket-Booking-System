@@ -9,6 +9,7 @@ import ticket.booking.utils.UserServiceUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,7 +96,8 @@ public class UserBookingService {
             return trainService.searchTrains(source,destination);
         }catch (Exception ex){
             System.out.println("There is something wrong!");
-            return null;
+            // return empty list if there is an exception
+            return Collections.emptyList();
         }
     }
 

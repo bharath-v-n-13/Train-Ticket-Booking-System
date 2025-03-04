@@ -27,14 +27,30 @@ public class TrainService {
 
     public void loadTrains() throws IOException{
         trainList = objectMapper.readValue(new File(TRAIN_DB_PATH), new TypeReference<List<Train>>() {});
+        System.out.println(trainList);
     }
 
     public List<Train> searchTrains(String source, String destination){
-        return trainList.stream().filter(train -> validTrain(train,source,destination)).collect(Collectors.toList());
+
+        // getting the source and destination
+        // and filtering the trains based on the source and destination
+        // in trainList List that was loaded from Train.json
+        // fetching each train from the list through stream and filtering it
+        // and checking it with the validTrain method
+        // if valid then collecting it in a list
+        // and returning the list of trains that are valid for the source and destination
+        try{
+            return trainList.stream()
+                    .filter(train -> validTrain(train,source,destination))
+                    .collect(Collectors.toList());
+        }catch (Exception ex){
+            System.out.println("Error in searchTrains: " + ex.getMessage());
+            return null;
+        }
     }
 
     public void addTrain(Train newTrain) {
-        // Check if a train with the same trainId already exists
+        // Checking here if a train with the same trainId already exists
         Optional<Train> existingTrain = trainList.stream()
                 .filter(train -> train.getTrainId().equalsIgnoreCase(newTrain.getTrainId()))
                 .findFirst();
@@ -74,12 +90,24 @@ public class TrainService {
     }
     
     private boolean validTrain(Train train, String source, String destination) {
-        List<String> stationOrder = train.getStations();
+        // getting are stations from that particular train in a list
+        List<String> stationList = train.getStations();
 
-        int sourceIndex = stationOrder.indexOf(source.toLowerCase());
-        int destinationIndex = stationOrder.indexOf(destination.toLowerCase());
+        // getting the index of the source and destination in the stationOrder list
+        int sourceIndex = stationList.indexOf(source);
+        int destinationIndex = stationList.indexOf(destination);
 
-        return sourceIndex != -1 && destinationIndex != -1 && sourceIndex < destinationIndex;
+        // checking if the source and destination are in the stationList and source is before destination
+        // in the stationList
+        // so that the train is valid
+        try{
+            return  sourceIndex != -1
+                    && destinationIndex != -1
+                    && sourceIndex < destinationIndex;
+        }catch (Exception e){
+            System.out.println("Error in validTrain: " + e.getMessage());
+            return false;
+        }
     }
 
 }
