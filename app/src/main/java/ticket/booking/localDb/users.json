@@ -22,4 +22,16 @@
   "password" : "b",
   "hashed_password" : "$2a$10$a1GCjTc1YhWpxQ3RPjJLrOAGXs0GlQX.lSONodi7JPFK8BCO0pGxa",
   "tickets_booked" : [ ]
+}, {
+  "username" : "2",
+  "user_id" : "125f1a3a-c1c2-4330-baeb-35d46f799468",
+  "password" : "f",
+  "hashed_password" : "$2a$10$HSdtu1lqYYb3Z.QgQimijORIlxdJ5EN4qS1grRZjXgzt2SXp9N0Ti",
+  "tickets_booked" : [ ]
+}, {
+  "username" : "f",
+  "user_id" : "d6c0516e-5228-47b9-a469-5aedbe7f12b2",
+  "password" : "f",
+  "hashed_password" : "$2a$10$Ww//xPCmZ2v4GOk1k64vruhSJ7xr7Gs.A//vRbFqDTRLyQa.pt2Ui",
+  "tickets_booked" : [ ]
 } ]

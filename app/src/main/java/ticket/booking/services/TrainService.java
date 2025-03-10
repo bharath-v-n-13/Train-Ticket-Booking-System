@@ -27,7 +27,7 @@ public class TrainService {
 
     public void loadTrains() throws IOException{
         trainList = objectMapper.readValue(new File(TRAIN_DB_PATH), new TypeReference<List<Train>>() {});
-        System.out.println(trainList);
+//        System.out.println(trainList);
     }
 
     public List<Train> searchTrains(String source, String destination){
@@ -106,6 +106,25 @@ public class TrainService {
                     && sourceIndex < destinationIndex;
         }catch (Exception e){
             System.out.println("Error in validTrain: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean bookTickets(Train train, int row, int seat) {
+        // getting the seats from the train
+        List<List<Integer>> seats = train.getSeats();
+        try{
+            if (row >= 0 && row < seats.size() && seat >= 0 && seat < seats.get(row).size()) {
+                if (seats.get(row).get(seat) == 0) {
+                    seats.get(row).set(seat, 1);
+                    train.setSeats(seats);
+                    addTrain(train);
+                    return true;
+                }
+            }
+            return false;
+        }catch (Exception e){
+            System.out.println("Error in bookTickets: " + e.getMessage());
             return false;
         }
     }

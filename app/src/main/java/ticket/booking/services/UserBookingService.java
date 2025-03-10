@@ -3,6 +3,7 @@ package ticket.booking.services;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import ticket.booking.entities.Ticket;
 import ticket.booking.entities.Train;
 import ticket.booking.entities.User;
 import ticket.booking.utils.UserServiceUtil;
@@ -112,14 +113,32 @@ public class UserBookingService {
             if (row >= 0 && row < seats.size() && seat >= 0 && seat < seats.get(row).size()) {
                 if (seats.get(row).get(seat) == 0) {
                     seats.get(row).set(seat, 1);
+
                     train.setSeats(seats);
                     trainService.addTrain(train);
+
+                    Ticket ticket = new Ticket();
+
+                    ticket.setSource(train.getStations().getFirst());
+                    ticket.setDestination(train.getStations().getLast());
+                    ticket.setTrain(train);
+                    ticket.setUserId(user.getUserId());
+                    ticket.setDateOfTravel("2021-09-01");
+                    ticket.setTicketId(UserServiceUtil.generateTicketId());
+
+                    user.getTicketsBooked().add(ticket);
+
+                    System.out.println("Seat booked successfully  !  ");
+
+                    System.out.println(ticket.getTicketInfo());
+
+                    saveUserListToFile();
                     return true; // Booking successful
                 } else {
-                    return false; // Seat is already booked
+                    return false; // Execute when Seat is already booked
                 }
             } else {
-                return false; // Invalid row or seat index
+                return false; // Execute when Invalid row or seat index
             }
         }catch (IOException ex){
             return Boolean.FALSE;

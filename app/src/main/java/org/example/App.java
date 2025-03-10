@@ -171,7 +171,7 @@ public class App {
 
                     for (List<Integer> row: seats){
                         for (Integer val: row){
-                            System.out.print(val+" ");
+                            System.out.print(val +  " ");
                         }
                         System.out.println();
                     }
