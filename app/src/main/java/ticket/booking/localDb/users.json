@@ -34,4 +34,30 @@
   "password" : "f",
   "hashed_password" : "$2a$10$Ww//xPCmZ2v4GOk1k64vruhSJ7xr7Gs.A//vRbFqDTRLyQa.pt2Ui",
   "tickets_booked" : [ ]
+}, {
+  "username" : "bharath",
+  "user_id" : "b9c287fb-38cb-454a-b19d-0d11220cd424",
+  "password" : "12345",
+  "hashed_password" : "$2a$10$ZXyfSoptXEkP9djDeDEnKeJdJBQ907g2K8OHWZff0YXQ9WACNkuQi",
+  "tickets_booked" : [ {
+    "ticket_id" : "1761678543917",
+    "user_id" : "b9c287fb-38cb-454a-b19d-0d11220cd424",
+    "source" : "kandivali",
+    "destination" : "malad",
+    "date_of_travel" : "2021-09-01",
+    "train" : {
+      "train_id" : "T123",
+      "train_no" : "12345",
+      "seats" : [ [ 1, 1, 1, 1, 0 ], [ 1, 1, 0, 0, 0 ], [ 0, 0, 0, 0, 1 ] ],
+      "station_times" : {
+        "kandivali" : "08:00 AM",
+        "borivali" : "09:00 AM",
+        "goregaon" : "10:00 AM",
+        "malad" : "11:00 PM"
+      },
+      "stations" : [ "kandivali", "borivali", "goregaon", "malad" ],
+      "train_info" : "Train ID: T123 Train No: 12345"
+    },
+    "ticket_info" : "Ticket ID: 1761678543917 belongs to User b9c287fb-38cb-454a-b19d-0d11220cd424 from kandivali to malad on 2021-09-01"
+  } ]
 } ]
